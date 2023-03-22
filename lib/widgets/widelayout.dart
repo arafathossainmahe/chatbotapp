@@ -1,29 +1,30 @@
-import 'package:chatbotapp/narrwowlayout.dart';
+import 'package:chatbotapp/widgets/narrwowlayout.dart';
 import 'package:flutter/material.dart';
 
 Widget buildWideLayout(BuildContext context) {
     return Row(
+      
       children: [
         Expanded(
-          flex: 2,
+          flex: 1,
           child: Drawer(
             child: ListView(
               children: const [
                 ListTile(
-                  leading: Icon(Icons.home),
+                  //leading: Icon(Icons.home),
                   title: Text('Home'),
                 ),
                 ListTile(
-                  leading: Icon(Icons.settings),
-                  title: Text('Settings'),
+                 // leading: Icon(Icons.settings),
+                  title: Text('Asia Pasific Net'),
                 ),
               ],
             ),
           ),
         ),
-        Expanded(
+        const Expanded(
           flex: 3,
-          child: buildContent(context),
+          child: NarrowLayout(),
         ),
       ],
     );

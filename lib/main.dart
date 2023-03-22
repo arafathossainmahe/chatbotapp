@@ -1,4 +1,4 @@
-import 'package:chatbotapp/home_page.dart';
+import 'package:chatbotapp/screen/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,12 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xff5499C7),
       ),
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
