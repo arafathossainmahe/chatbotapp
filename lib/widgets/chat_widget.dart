@@ -16,12 +16,10 @@ class ChatWidget extends StatelessWidget {
   final bool shouldAnimate;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Material(
-          color: scaffoldBackgroundColor,
-          //color: chatIndex == 0 ? scaffoldBackgroundColor : cardColor,
-          child: Padding(
+    return SafeArea(
+      child: Column(
+        children: [
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +85,7 @@ class ChatWidget extends StatelessWidget {
                           : Text(
                               msg.trim(),
                               style: const TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16),
                             ),
@@ -95,8 +93,8 @@ class ChatWidget extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

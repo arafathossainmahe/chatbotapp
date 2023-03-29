@@ -1,14 +1,15 @@
-
 import 'package:chatbotapp/providers/models_provider.dart';
 import 'package:chatbotapp/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import 'constants/constants.dart';
 import 'providers/chats_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -27,13 +28,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter ChatBOT',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            scaffoldBackgroundColor: scaffoldBackgroundColor,
-            appBarTheme:const AppBarTheme(
-              
-            )),
+          textTheme: GoogleFonts.robotoFlexTextTheme(),
+          scaffoldBackgroundColor: scaffoldBackgroundColor,
+          appBarTheme: const AppBarTheme(),
+        ),
         home: const HomePage(),
       ),
     );

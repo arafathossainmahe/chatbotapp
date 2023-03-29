@@ -45,19 +45,19 @@ class HomePage extends StatelessWidget {
           }
         },
       ),
-      bottomNavigationBar: Row(
-        children: const [
-          Flexible(
-            child: Image(height: 50,
-              image: AssetImage('assets/images/logo.jpg'),
-            ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Text('Copyright © 2023 - All right reserved')
-        ],
-      ),
+      // bottomNavigationBar: Row(
+      //   children: const [
+      //     Flexible(
+      //       child: Image(height: 50,
+      //         image: AssetImage('assets/images/logo.jpg'),
+      //       ),
+      //     ),
+      //     SizedBox(
+      //       width: 10,
+      //     ),
+      //     Text('Copyright © 2023 - All right reserved')
+      //   ],
+      // ),
     );
   }
 }

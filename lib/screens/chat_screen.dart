@@ -57,51 +57,62 @@ class _ChatScreenState extends State<ChatScreen> {
       //   ],
       // ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Flexible(
-              child: ListView.builder(
-                  controller: _listScrollController,
-                  itemCount: chatProvider.getChatList.length, //chatList.length,
-                  itemBuilder: (context, index) {
-                    return ChatWidget(
-                      msg: chatProvider
-                          .getChatList[index].msg, // chatList[index].msg,
-                      chatIndex: chatProvider.getChatList[index]
-                          .chatIndex, //chatList[index].chatIndex,
-                      shouldAnimate:
-                          chatProvider.getChatList.length - 1 == index,
-                    );
-                  }),
+        child: Container(
+          margin: const EdgeInsets.only(top: 15, left: 5, bottom: 15),
+          height: double.maxFinite,
+          width: double.maxFinite,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(.9),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(15),
+              bottomLeft: Radius.circular(15),
             ),
-            if (_isTyping) ...[
-              const SpinKitThreeBounce(
-                color: Colors.white,
-                size: 18,
+          ),
+          child: Column(
+            children: [
+              Flexible(
+                child: ListView.builder(
+                    controller: _listScrollController,
+                    itemCount:
+                        chatProvider.getChatList.length, //chatList.length,
+                    itemBuilder: (context, index) {
+                      return ChatWidget(
+                        msg: chatProvider
+                            .getChatList[index].msg, // chatList[index].msg,
+                        chatIndex: chatProvider.getChatList[index]
+                            .chatIndex, //chatList[index].chatIndex,
+                        shouldAnimate:
+                            chatProvider.getChatList.length - 1 == index,
+                      );
+                    }),
               ),
-            ],
-            const SizedBox(
-              height: 15,
-            ),
-            Material(
-              color: smsSend,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              if (_isTyping) ...[
+                const SpinKitThreeBounce(
+                  color: Colors.black,
+                  size: 18,
+                ),
+              ],
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.black.withOpacity(.5),
+                  ),
+                ),
+                height: 60,
+                width: double.maxFinite,
                 child: Row(
                   children: [
                     Expanded(
-                      child: Container(
-                        width: null,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          border: Border.all(
-                            color: const Color(0xb296a9ba),
-                            width: 1,
-                          ),
-                          color: scaffoldBackgroundColor,
-                        ),
-                        child: Center(
+                      child: Center(
+
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10),
                           child: TextField(
                             focusNode: focusNode,
                             style: const TextStyle(color: Colors.black),
@@ -131,8 +142,8 @@ class _ChatScreenState extends State<ChatScreen> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
